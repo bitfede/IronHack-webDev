@@ -1,0 +1,50 @@
+#navbar {
+	position: absolute;
+	display: -webkit-inline-box;
+  top: 0px;
+  right: 0px;
+}
+
+.navbutton {
+	padding-right: 30px;
+	list-style-type: none;
+}
+
+.navimg {
+	width: 30px;
+}
+
+article {
+	text-align: center;
+	margin-top: 200px;
+}
+
+#searchbar {
+	width: 500px;
+	height: 35px;
+	margin: auto;
+	border-style: solid;
+	border-width: 2px;
+}
+
+#buttons {
+	display: -webkit-inline-box;
+}
+
+footer {
+	position:absolute;
+	top: 600px;
+  width: 100%;
+  height: 55px;
+  background-color: #bdc3c7;
+}
+
+#bottom-navbar {
+	float: left;
+	display: -webkit-inline-box;
+}
+
+#bottom-navbar-r {
+	float: right;
+	display: -webkit-inline-box;
+}
