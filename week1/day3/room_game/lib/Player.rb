@@ -8,28 +8,32 @@ class Player
 	end
 
 	def lookAround()
+		puts "------------------------------------------------------"
+		puts "------------------------------------------------------"
+		puts "------------------------------------------------------"
+
 		@conns = []
 		puts @position.description
 		@position.connections.each do |pos|
 			@conns.push(pos.split(" "))
 		end
-
+		puts ""
 		@conns.each do |direction|
-			puts "you can go to " + direction[0] + " if you move " + direction[1]
-		end
-
+			puts "->  you can go to " + direction[0].gsub(/_/, " ") + " if you move " + direction[1]
+		end	
+		puts ""
 	end
 
-	def lookAroundfirst()
-		puts "You wake up in what looks like a prison cell"
-		@position.connections.each do |pos|
-			@conns.push(pos.split(" "))
-		end
+	# def lookAroundfirst()
+	# 	puts "You wake up in what looks like a tiny prison cell"
+	# 	@position.connections.each do |pos|
+	# 		@conns.push(pos.split(" "))
+	# 	end
 
-		@conns.each do |direction|
-			puts "you can go to " + direction[0] + " if you move " + direction[1]
-		end
-	end 
+	# 	@conns.each do |direction|
+	# 		puts "There is a door to " + direction[0] + " if you move " + direction[1]
+	# 	end
+	# end 
 
 	def move(dir)
 		@conns.each do |direction|
@@ -47,12 +51,18 @@ class Player
 			end
 
 		end
-	lookAround
+	
 	end
 
 	def interact(obj)
-	#obj is an object	
+	#obj is a string describing object
+	  obj = obj.downcase
+		interacted = @position.interact(obj)
+		interacted
+	end
+
+	def displayobj()
+		@position.displayob
 	end
 
 end
-
