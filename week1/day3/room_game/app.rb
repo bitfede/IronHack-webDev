@@ -42,6 +42,6 @@ input = ""
 while input != "exit"
 	print "> "
 	input = gets.chomp
-
+	
 	player.move(input)
 end
