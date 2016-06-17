@@ -8,7 +8,7 @@ require_relative("lib/Room.rb")
 
 connections = {
 	:room1 => ['The_Kitchen E'],
-	:room2 => ['The_First_Dark_Room W','The_Main_Corridor N'],
+	:room2 => ['The_Dark_Room W','The_Main_Corridor N'],
 	:room3 =>	['The_Kitchen S','The_Garage W','The_Patio E'],
 	:room4 =>	['The_Main_Corridor E'],
 	:room5 =>	['The_Main_Corridor W']
@@ -81,7 +81,7 @@ while input != "exit"
 	stop = player.interact(input)
 	player.move(input)
 	if (stop == true)
-		print "press any key to continue > "
+		print "hit enter to continue > "
 		gets
 	end
 end

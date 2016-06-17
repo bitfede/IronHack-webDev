@@ -24,17 +24,6 @@ class Player
 		puts ""
 	end
 
-	# def lookAroundfirst()
-	# 	puts "You wake up in what looks like a tiny prison cell"
-	# 	@position.connections.each do |pos|
-	# 		@conns.push(pos.split(" "))
-	# 	end
-
-	# 	@conns.each do |direction|
-	# 		puts "There is a door to " + direction[0] + " if you move " + direction[1]
-	# 	end
-	# end 
-
 	def move(dir)
 		@conns.each do |direction|
 			if dir == direction[1]
