@@ -2,45 +2,44 @@ class Board
 	def initialize
 		@pieces = [
 			nil,
-			[nil,1,2,3,4,5,6,7,8],
-			[nil,1,2,3,4,5,6,7,8],
-			[nil,1,2,3,4,5,6,7,8],
-			[nil,1,2,3,4,5,6,7,8],
-			[nil,1,2,3,4,5,6,7,8],
-			[nil,1,2,3,4,5,6,7,8],
-			[nil,1,2,3,4,5,6,7,8],
-			[nil,1,2,3,4,5,6,7,8]
+			[],
+			[],
+			[],
+			[],
+			[],
+			[],
+			[],
+			[]
 		]
 	end
 
 	def add_piece(piece)
-		x = 1
-		y = 1
+		@pieces[piece.x][piece.y] = piece
+	end	
 
-		while y <= 8
-		x = 1
-			while x <= 8
-				if (x == piece.x && y == piece.y)
-					@pieces[x][y] = piece
-				end
-				x += 1
-			end
-			puts ""
-			y += 1
+	def can_move?(start, destination)
+		#catch moving into same position
+		if (start[0] == destination[0]) && (start[1] == destination[1])
+			#DEBUG puts "you are trying to move to the same spot"
+			false
+		#catch moving out of bounds
+		elsif (destination[0] > 8 || destination[1] > 8)
+			#DEBUG puts "cannot move object, destination out of bounds"
+			false
+		#making sure there's a piece there
+		elsif ( @pieces[start[0]][start[1]] == nil )
+			#DEBUG puts "no element selected"
+			false
+		else
+			piece = @pieces[start[0]][start[1]]
+			piece.can_move?(destination[0],destination[1])
 		end
-
-				print_board
-
-	end
-
-	def can_move?
-		#TODO
 	end
 
 
 	##Method to print the board with all the 
 	def print_board
-		
+		puts "Chess Board:\n\n"
 		y = 8
 		while y >=1
 		x = 1
@@ -60,6 +59,13 @@ class Board
 						print "|w"
 					end
 					print "K"
+				elsif (@pieces[x][y].class.to_s == "Queen")
+					if (@pieces[x][y].color == "black")
+						print "|b"
+					else
+						print "|w"
+					end
+					print "Q"
 				else
 					print "| "
 					print "-"
@@ -73,7 +79,7 @@ class Board
 
 
 		puts ""
-		print "    "
+		print "   "
 		(1..8).each { |n| print (" " + n.to_s + " ") }
 		puts ""
 

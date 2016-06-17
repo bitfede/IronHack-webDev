@@ -44,6 +44,9 @@ white_king = King.new(4, 1, "white")
 
 ####puts "Bishop Tests"
 black_bishop_right = Bishop.new(4,6,"black")
+black_bishop_left = Bishop.new(1,8,"black")
+white_bishop_right = Bishop.new(8, 1, "white")
+white_bishop_left = Bishop.new(1, 1, "white")
 ###tester.test(black_bishop_right)
 
 ##Knight
@@ -55,7 +58,8 @@ black_Knight_right = Knight.new(6,5,"black")
 ##Queen
 
 ####puts "Queen Tests"
-black_queen = Queen.new(2,5,"black")
+black_queen = Queen.new(5,8,"black")
+white_queen = Queen.new(5,1,"white")
 ###tester.test(black_queen)
 
 ##Pawn
@@ -82,8 +86,27 @@ my_board.add_piece(black_king)
 my_board.add_piece(white_king)
 
 #adding queens
+my_board.add_piece(black_queen)
+my_board.add_piece(white_queen)
 
+print "Can the tower at 1,1 move to 1,4?  "
+p my_board.can_move?([1,1],[1,4])
 
+print "Can the tower at 1,1 move to 4,5?  "
+p my_board.can_move?([1,1],[4,5])
+
+print "Can the tower at 1,1 move to 1,1?  "
+p my_board.can_move?([1,1],[1,1])
+
+print "Can the tower at 1,1 move to 9,10?  "
+p my_board.can_move?([1,1],[9,10])
+
+print "Can I select no element at 1,3 move it to 1,4? "
+p my_board.can_move?([1,3],[1,4])
+
+my_board.print_board
+
+#there will be a game class, who will call a new method in the board class to change piece position
 
 
 
