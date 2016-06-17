@@ -1,5 +1,5 @@
-class Knight
-  attr_accessor :x , :y
+class Queen
+attr_accessor :x , :y, :color
   def initialize(x, y, color)
     @x = x
     @y = y
@@ -8,8 +8,11 @@ class Knight
 
   def can_move?(final_x, final_y)
     incrementX = (@x - final_x).abs
-    incrementY =	(@y - final_y).abs
-    if ((incrementX == 2) && (incrementY == 1)) || ((incrementX == 1) && (incrementY == 2))
+    incrementY = (@y - final_y).abs
+
+    if @x == final_x || @y == final_y
+      true
+    elsif (incrementY == incrementX)
       true
     else
       false

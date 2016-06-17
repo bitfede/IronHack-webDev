@@ -2,7 +2,7 @@ class Tester
 
 	def test(chessPiece)
 		#hardcoding 8x8 chessboard
-	rows = 0
+	rows = 0	#rows is zero and i = 7 because we are counting backwards from the
 	i = 7
 	columns = 7 
 	j = 0
@@ -13,20 +13,17 @@ class Tester
 		print i+1
 		print " "
 		while j <= columns
-			if (chessPiece.can_move?(i+1, j+1))
-
-				if ( i+1 == chessPiece.x && j+1 == chessPiece.y)
+			if ( i+1 == chessPiece.y && j+1 == chessPiece.x)
 					print "|O"
-				else
+			elsif chessPiece.can_move?(j+1, i+1)
 					print "|X"
-				end
 			else
 				print "|-"
-			end
+			end #finish canmove loop
 
 			j = j + 1
 		end
-		puts "|"
+		puts "|" #close the chess board and go to a new line
 		i = i - 1
 	end
 
@@ -34,6 +31,7 @@ class Tester
 	print "   "
 	(1..8).each { |n| print (n.to_s + " ") }
 	puts ""
+
 
 	end
 
