@@ -35,7 +35,6 @@ class Tester
 	(1..8).each { |n| print (n.to_s + " ") }
 	puts ""
 
-
 	end
 
 end
