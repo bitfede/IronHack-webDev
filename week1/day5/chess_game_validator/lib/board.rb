@@ -66,6 +66,27 @@ class Board
 						print "|w"
 					end
 					print "Q"
+				elsif (@pieces[x][y].class.to_s == "Pawn")
+					if (@pieces[x][y].color == "black")
+						print "|b"
+					else
+						print "|w"
+					end
+					print "P"
+				elsif (@pieces[x][y].class.to_s == "Bishop")
+					if (@pieces[x][y].color == "black")
+						print "|b"
+					else
+						print "|w"
+					end
+					print "B"
+				elsif (@pieces[x][y].class.to_s == "Knight")
+					if (@pieces[x][y].color == "black")
+						print "|b"
+					else
+						print "|w"
+					end
+					print "K"
 				else
 					print "| "
 					print "-"
