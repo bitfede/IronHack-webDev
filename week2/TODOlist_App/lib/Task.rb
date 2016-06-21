@@ -1,5 +1,5 @@
 class Task
-    attr_reader :content, :id
+    attr_reader :content, :id, :created_at
     @@current_id = 1
 
     def initialize(content)
@@ -29,6 +29,4 @@ class Task
     	@content
     end
 
-    
-    
 end

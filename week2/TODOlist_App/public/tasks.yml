@@ -1,0 +1,20 @@
+---
+Federico:
+- !ruby/object:Task
+  content: Walk the dog
+  id: 1
+  completed: false
+  created_at: 2016-06-20 17:43:01.418565000 -04:00
+  updated_at: 
+- !ruby/object:Task
+  content: Buy the milk
+  id: 2
+  completed: false
+  created_at: 2016-06-20 17:43:01.418567000 -04:00
+  updated_at: 
+- !ruby/object:Task
+  content: Make my todo list into a web app
+  id: 3
+  completed: false
+  created_at: 2016-06-20 17:43:01.418568000 -04:00
+  updated_at: 
