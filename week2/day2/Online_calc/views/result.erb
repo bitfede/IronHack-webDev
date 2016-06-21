@@ -1,0 +1,17 @@
+<!-- views/add.erb -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Online Calculator</title>
+</head>
+<body style="text-align:center">
+	<% @first %>
+  <h1>Result</h1>
+		<p> <%= @first.to_s + " " + @sign + " " + @second.to_s + " = " + @result.to_s %>
+	<br>
+
+	<form action="/store" method="POST">
+		<button type="submit" name="res" value="<%= @result %>">Store!</button>
+	</form>
+</body>
+</html>
