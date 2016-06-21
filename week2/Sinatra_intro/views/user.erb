@@ -1,0 +1,12 @@
+<h1> User Profile </h1>
+
+<h3> Hello <%= @name.capitalize %>!! </h3>
+
+<% if @info != nil %>
+<p>NAME: <%= @info[:name] %></p>
+<p>EMAIL: <%= @info[:email] %></p>
+<% else %>
+
+<p>No user data found</p>
+
+<% end %>
