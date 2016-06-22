@@ -1,8 +1,11 @@
 # app.rb 
 
 require "sinatra"
+require "sinatra/reloader"
+require "pry"
 require 'time'
 
+enable(:sessions)
 
 users = {
 	"khalifenizar"	=> { :name => "Nizar Khalife" ,  :email  => "nizarK@ironhack.com"},
@@ -14,16 +17,24 @@ get "/" do
 	erb(:home)
 end
 
+get "/session-test" do
+	@current_session = session
+
+	erb(:display_session)
+
+end
+
 
 get "/ciao" do
 	"My first Sinatra app."
 end
 
 get "/about" do
+	status(418)
 	erb(:about)
 	end
 
-get "/recipes" do
+get "/recipe" do
 
 	@name = "Red Velvet Cake"
 	@ingredients = [
@@ -43,6 +54,7 @@ end
 get "/hello/:name" do
   @name = params['name']
   @info = users[@name]
+  binding.pry
   if (@name == "josh")
 	  erb(:scotch)
   else

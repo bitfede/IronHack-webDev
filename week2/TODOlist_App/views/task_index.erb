@@ -1,0 +1,24 @@
+<!-- views/add.erb -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Tasks</title>
+</head>
+<body>
+
+  <h1 style="text-align:center">My Tasks</h1>
+	<ul>
+		<% @list.each do |task| %>
+		<form action="/completed" method="post">
+		<li><%= task.content %> 
+			<% if task.complete? == false %>
+		 		<button type="submit" name="task" value="<%= task.id %>">Complete</button> </li> 
+		 	</form>
+		 		<% else %>
+		 		 <strong>[completed]</strong>
+		 		<% end %>
+		<% end %>
+	</ul>
+	<p style="text-align:center"> <a href="/new_task"> Add a new Task </a> </p>
+</body>
+</html>
