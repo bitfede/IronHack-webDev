@@ -12,7 +12,8 @@
 		<form action="/completed" method="post">
 		<li><%= task.content %> 
 			<% if task.complete? == false %>
-		 		<button type="submit" name="task" value="<%= task.id %>">Complete</button> </li> 
+		 		<button type="submit" name="task" value="<%= task.id %>">Complete</button>
+		 		<button type="submit" name="deltask" value="<%= task.id %>">Delete</button> </li> 
 		 	</form>
 		 		<% else %>
 		 		 <strong>[completed]</strong>

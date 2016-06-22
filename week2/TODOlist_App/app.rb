@@ -49,11 +49,25 @@ post '/create_task' do
 end
 
 post '/completed' do
+
+	if (params[:deltask] == nil)
+
+		taskID = params[:task].to_i
+
+		task = todo_list.find_task_by_id(taskID)
+
+		task.complete!
+
+	elsif ( params[:task] == nil ) 
+
 	taskID = params[:task].to_i
 
-	task = todo_list.find_task_by_id(taskID)
+	todo_list.delete_task(taskID)
 
-	task.complete!
+
+	end	
+
+	todo_list.save("./public/tasks.yml")
 
 	redirect to "/tasks"
 

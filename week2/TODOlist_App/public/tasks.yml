@@ -2,25 +2,19 @@
 Federico:
 - !ruby/object:Task
   content: Walk the dog
-  id: 8
-  completed: false
-  created_at: 2016-06-22 18:58:53.413414000 -04:00
+  id: 1
+  completed: true
+  created_at: 2016-06-22 19:12:19.283393000 -04:00
   updated_at: 
 - !ruby/object:Task
   content: Buy the milk
-  id: 9
+  id: 2
   completed: false
-  created_at: 2016-06-22 18:58:53.413416000 -04:00
+  created_at: 2016-06-22 19:12:19.283395000 -04:00
   updated_at: 
 - !ruby/object:Task
   content: Make my todo list into a web app
-  id: 10
+  id: 3
   completed: false
-  created_at: 2016-06-22 18:58:53.413417000 -04:00
-  updated_at: 
-- !ruby/object:Task
-  content: xiao
-  id: 11
-  completed: false
-  created_at: 2016-06-22 18:58:59.408691000 -04:00
+  created_at: 2016-06-22 19:12:19.283396000 -04:00
   updated_at: 
