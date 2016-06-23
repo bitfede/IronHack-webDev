@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Blog posts</title>
+</head>
+<body style="text-align:center">
+
+  <h1 style="padding-left:50px">My Blog!!!!!!!!!!</h1> <br>
+	<ul style="list-style-type:none">
+
+		<% @postlist.each do |post| %>
+
+			<li>
+				<strong>
+					<a href="/post-details/<%= @postlist.index(post) %>"> <%= post.title.capitalize %> </a>
+				</strong>
+				<section style="font-size:10px"> <%="[Posted on: " + post.date.utc.to_s + "]" %> </section> 
+			</li>
+		<p>
+<!-- 	<%= post.text %>  -->
+			</p>	
+
+		<% end %>
+	
+	</ul>
+	<a href="/new-post" style="padding-left:40px"> Create a New Post </a>
+</body>
+</html>

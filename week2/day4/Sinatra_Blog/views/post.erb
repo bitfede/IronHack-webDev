@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Blog posts</title>
+</head>
+<body style="text-align:center">
+
+  <h1 style="padding-left:50px">My Blog!!!!!!!!!!</h1> <br>
+
+  <h2><%= @postlist[@postId].title.capitalize %></h2>
+  <section style="font-size:10px">
+  	<%="[Posted on: " + @postlist[@postId].date.utc.to_s + "]" %>
+  </section>
+  <br>
+
+  <p> <%= @postlist[@postId].text.capitalize %> </p>
+  <br>
+  <a href="/"> Back to Home </a>
+</body>
+</html>

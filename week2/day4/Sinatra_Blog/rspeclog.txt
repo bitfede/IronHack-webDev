@@ -1,0 +1,26 @@
+
+Blog
+  #add_post
+    adds four posts to the array 'posts'
+  #latest_posts
+    sorts all the posts by date
+
+Server Service
+  loads the home page
+  loads the post details page
+  loads the new post page
+-----------
+titlePOST
+  gets the data from the new post form
+
+Post
+  #initialize
+    creates a post
+  #sponsor!
+    sponsors a post
+  #unsponsor!
+    unsponsors a post
+
+Finished in 4.45 seconds (files took 0.11369 seconds to load)
+9 examples, 0 failures
+

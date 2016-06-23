@@ -1,4 +1,7 @@
+require_relative("Save.rb")
+
 class Blog
+	include Save
 	attr_accessor :posts
 	def initialize()
 		@posts = []
@@ -14,12 +17,13 @@ class Blog
 		 #puts @posts[0].date
 		 #puts @posts[1].date
 		 #puts @posts[2].date
-	end
+	end	
 
 	def latest_posts
 		sortPosts()
 		@posts
 	end
+
 
 
 end

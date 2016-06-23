@@ -7,6 +7,10 @@ class Post
 		@sponsored = sponsored
 	end
 
+	def sponsored?
+		@sponsored
+	end
+
 	def sponsor!
 		@sponsored = true
 	end

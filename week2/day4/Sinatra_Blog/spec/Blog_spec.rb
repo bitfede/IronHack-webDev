@@ -10,7 +10,6 @@ RSpec.describe Blog do
 		post2 = Post.new("Title2" , "This is post number two", false )
 		sleep(1.1)
 		post3 = Post.new("Title3" , "This is post number three", false )
-		sleep(1.1)
 		post4 = Post.new("Title4" , "This is post number four", false )
 		blogg = Blog.new
 		blogg.add_post(post1)
