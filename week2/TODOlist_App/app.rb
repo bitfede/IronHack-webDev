@@ -9,13 +9,6 @@ require_relative("lib/Save.rb")
 
 
 todo_list = TodoList.new("Federico")
-task = Task.new("Walk the dog")
-task2 = Task.new("Buy the milk")
-task3 = Task.new("Make my todo list into a web app")
-
-todo_list.add_task(task)
-todo_list.add_task(task2)
-todo_list.add_task(task3)
 
 get '/' do
 	redirect to "/tasks"
@@ -50,7 +43,7 @@ end
 
 post '/completed' do
 
-	if (params[:deltask] == nil)
+	# if (params[:deltask] == nil)
 
 		taskID = params[:task].to_i
 
@@ -58,14 +51,14 @@ post '/completed' do
 
 		task.complete!
 
-	elsif ( params[:task] == nil ) 
+	# elsif ( params[:task] == nil ) 
 
-	taskID = params[:task].to_i
+	# taskID = params[:task].to_i
 
-	todo_list.delete_task(taskID)
+	# todo_list.delete_task(taskID)
 
 
-	end	
+	# end	
 
 	todo_list.save("./public/tasks.yml")
 

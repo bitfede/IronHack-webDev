@@ -1,6 +1,11 @@
 require_relative("lib/calc.rb")
 require 'sinatra'
 
+get "/test" do
+	erb(:index)
+end
+
+
 get "/" do
 		file = File.open("public/data.txt").each do |line|
 			@past_result = line
