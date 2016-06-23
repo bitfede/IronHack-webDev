@@ -17,23 +17,24 @@ RSpec.describe Blog do
 		blogg.add_post(post2)
 		blogg.add_post(post3)
 		blogg.add_post(post4)
-		blogg
+		blogg	
 	end
 
 	#start tests
 
 	describe "#add_post" do
 
-		it "adds five posts" do
+		it "adds four posts to the array 'posts'" do
 			expect(the_blog.posts.length).to eq(4)
+			expect(the_blog.posts.class.to_s).to eq("Array")
 		end
 
 	end
 
-	describe "#sortPosts" do
-		it "sorts all the posts by date" do
+	describe "#latest_posts" do
 
-			the_blog.sortPosts
+		it "sorts all the posts by date" do
+			the_blog.latest_posts
 			expect( the_blog.posts[0].date > the_blog.posts[1].date ).to eq(true)
 		end
 	end

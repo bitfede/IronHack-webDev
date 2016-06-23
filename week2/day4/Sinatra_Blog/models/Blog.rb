@@ -11,9 +11,14 @@ class Blog
 	def sortPosts()
 
 		@posts.sort! {|a,b| b.date <=> a.date }
-		#DEBUG puts @posts[0].date
-		#DEBUG puts @posts[1].date
-		#DEBUG puts @posts[2].date
+		 #puts @posts[0].date
+		 #puts @posts[1].date
+		 #puts @posts[2].date
+	end
+
+	def latest_posts
+		sortPosts()
+		@posts
 	end
 
 
