@@ -1,6 +1,5 @@
 require_relative('../app.rb')
-# require_relative('../models/Post.rb')
-# require_relative('../models/Blog.rb')
+require_relative('../models/movies.rb')
 
 require 'sinatra'
 require 'rack/test'
@@ -14,6 +13,16 @@ describe 'Server Service' do
 
 	it "loads the home page" do
 		get '/'
+		expect(last_response).to be_ok
+	end
+
+	it "loads the posts page" do
+		post '/search', {"word" => "star wars"}
+		expect(last_response).to be_ok
+	end
+
+	it "loads the question page" do
+		get '/question'
 		expect(last_response).to be_ok
 	end
 

@@ -5,17 +5,22 @@
   <meta charset="utf-8">
 
   <title>The Movie Trivia!</title>
-  <meta name="description" content="The HTML5 Herald">
+  <meta name="description" content="Trivia Game">
   <meta name="author" content="SitePoint">
-
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
-
-  <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
+  <link rel="stylesheet" href="/styles.css">
+  <!-- <script src="js/scripts.js"></script> -->
 </head>
+<body style="text-align:center">
 
-<body>
-  <script src="js/scripts.js"></script>
+<h1>Federico's <strong>Movie Trivia</strong> Game Web App!</h1>
+
+<form action="/search" method="post" id="search">
+	<label>Insert the keyword</label><br>
+	<input name="word" form="search" type="text"><br>
+	<button form="search">Go!</button><br>
+	<label>OR</label><br>
+	<button name="word" form="search" value="<%= @word %>">RANDOM WORD</button>
+</form>
+
 </body>
 </html>

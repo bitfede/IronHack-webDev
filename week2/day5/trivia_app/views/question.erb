@@ -1,0 +1,39 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The Movie Trivia!</title>
+  <meta name="description" content="Trivia Game">
+  <meta name="author" content="SitePoint">
+  <link rel="stylesheet" href="/styles.css">
+  <!-- <script src="js/scripts.js"></script> -->
+</head>
+<body style="text-align:center">
+
+<h1>Federico's <strong>Movie Trivia</strong> Game Web App!</h1>
+
+<% if @list.length > 0 %>
+
+<h3>Which movie was filmed in <%= @list[@num].year.to_s%>  ?</h3>
+
+		<% @list.each do | movie | %>
+				<% if (movie.title.to_s == @solution.title.to_s) %>
+					<img src="<%= movie.poster %>" onClick="alert('yay')" height="150" width="150">
+<!-- 					<button onClick="alert('yay')" >This one!</button>
+-->				<% else %>
+					<img src="<%= movie.poster %>" onClick="alert('WRONG!')" height="150" width="150">
+<!-- 					<button onClick="alert('Wrong')" >This one!</button>
+-->				<% end %>
+		<% end %>
+
+<% else %>
+
+<h3>Please go <a href="/">back to the Home page and search for a keyword</a> in order to play</h3>
+
+
+<% end %>
+
+</body>
+</html>
