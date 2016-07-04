@@ -17,7 +17,24 @@ class Quiz {
 		var questioncounter = 0;
 			var options = {prompt: this.questions[questioncounter].question }
 			
-			read(options , function(err, result) {
+			var switcher = false;
+
+			readQ();
+
+			
+		}
+
+		readQ() {
+				read(options , callback) 
+
+				var switcher = false;
+
+
+				while (switcher === false) {}
+
+		}
+
+	callback(err, result) {
 				
 				if (err) {
 					console.log("NOOO");
@@ -26,22 +43,14 @@ class Quiz {
 				if (result === Quiz.questions[questioncounter].answer) {
 					console.log("CORRECT!");
 					this.questioncounter++;
+					return true;
 				}
 				else {
 					console.log("INCORRECT");
+					return true;
 				}
 				//buggy!!!!!!!!! TODO
-			 })
-
-		}
-
-
-	callback(quiz, result) {
-		if (result === "79") {
-			console.log("CIAOO");
-		}
-
-	}
+			 }
 
 
 }
