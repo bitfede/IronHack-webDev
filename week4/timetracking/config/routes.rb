@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   get '/', to: 'site#home'
 
   get '/contacts', to: 'site#contacts'
+
+  get '/projects', to: 'projects#index'
   
 end

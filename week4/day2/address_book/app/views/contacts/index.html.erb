@@ -1,0 +1,11 @@
+
+<ul>
+	<% @contacts = @contacts.sort { |a,b| a.name <=> b.name }  %>
+	<% @contacts.each do |contact| %>
+		<li>
+			<%= contact.name.to_s %>
+		</li>	
+	<% end %>
+</ul>
+
+<%= link_to 'Create a New Contact', '/new' %>
