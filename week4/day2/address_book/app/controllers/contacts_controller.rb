@@ -23,5 +23,14 @@ class ContactsController < ApplicationController
     redirect_to('/contacts')
 	end
 
+	def show
+
+		contactID = params[:id]
+		@contact = Contact.where("id=?", contactID)
+
+		render('show')
+
+	end
+
 end
 

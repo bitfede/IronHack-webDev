@@ -3,7 +3,7 @@
 	<% @contacts = @contacts.sort { |a,b| a.name <=> b.name }  %>
 	<% @contacts.each do |contact| %>
 		<li>
-			<%= contact.name.to_s %>
+			<%= contact.name.to_s + "  " %> <%= link_to('Show Profile' , "/show/#{contact.id}") %>
 		</li>	
 	<% end %>
 </ul>
