@@ -18,9 +18,17 @@ class ContactsController < ApplicationController
       :phone_number => params[:contact][:phone_number],
       :email => params[:contact][:email])
 
-    	contact.save
-    # Render contact's attributes
-    redirect_to('/contacts')
+    	if (contact.name == "" || contact.address == "")
+    		puts "--------------------------"
+    		puts "ERROR, CANNOT SAVE CONTACT"
+    		puts "--------------------------"
+    		redirect_to('/contacts')
+    		#do stuff
+    	else
+	    	contact.save
+		    # Render contact's attributes
+		    redirect_to('/contacts')
+		  end
 	end
 
 	def show
