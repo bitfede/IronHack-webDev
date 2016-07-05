@@ -5,9 +5,9 @@ class ArtiiController < ApplicationController
 
 	def newart
 
-		artii = const.Base.new
-		word =  artii.asciify('bla')
+		@asciifier = Artii::Base.new(:font => @font)
 
-		render plain: word
+		render plain: @asciifier
+
 	end
 end
