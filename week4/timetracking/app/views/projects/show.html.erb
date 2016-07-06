@@ -1,3 +1,7 @@
 <h3>Project: <%= @my_project.name %></h3>
 
 <p> <%= @my_project.description %> </p>
+
+<%= link_to 'View Time Entries' , "/projects/#{@my_project.id}/time_entries" %>
+<br>
+<%= link_to "New Time Entry", "/projects/#{@my_project.id}/time_entries/new" %> 

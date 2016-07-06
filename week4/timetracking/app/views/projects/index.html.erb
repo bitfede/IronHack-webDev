@@ -4,7 +4,7 @@
 	<% @projects_arr.each do |the_proj| %>
 	<li>	
 		<%= the_proj.name %> 
-		<%= link_to 'View', "projects/show/#{the_proj.id}" %>
+		<%= link_to 'View', "/projects/#{the_proj.id}" %>
 	</li>
 	<% end %>
 </ul>
