@@ -1,10 +1,10 @@
 <h2>List of projects</h2>
 
-
 <ul>
 	<% @projects_arr.each do |the_proj| %>
 	<li>	
-		<%= the_proj.name + "  -  " + the_proj.description %>
+		<%= the_proj.name %> 
+		<%= link_to 'View', "projects/show/#{the_proj.id}" %>
 	</li>
 	<% end %>
 </ul>
