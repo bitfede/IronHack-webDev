@@ -9,6 +9,7 @@ class ProjectsController < ApplicationController
 
 		@my_project = Project.find(params[:id])
 
+		render 'show'
 	end
 
 	def new
@@ -24,7 +25,7 @@ class ProjectsController < ApplicationController
 			:description => params[:project][:description])
 		@my_project.save
 
-		redirect_to "/projects/show/#{@my_project.id}"
+		redirect_to "/projects/#{@my_project.id}"
 	end
 
 end

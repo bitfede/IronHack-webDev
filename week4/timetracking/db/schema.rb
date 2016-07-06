@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20160706152610) do
   end
 
   create_table "time_entries", force: :cascade do |t|
+    
     t.integer  "project_id"
     t.integer  "hours"
     t.integer  "minutes"
@@ -27,6 +28,7 @@ ActiveRecord::Schema.define(version: 20160706152610) do
     t.datetime "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+
   end
 
 end
