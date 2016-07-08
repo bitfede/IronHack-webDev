@@ -19,9 +19,23 @@ class ConcertsController < ApplicationController
 			)
 
 		if @new_concert.save
-			redirect_to '/'
+			redirect_to '/concerts'
 		else
 			render 'new'
 		end
+	end
+
+	def index
+		@concerts = Concert.all
+
+		render 'index'
+	end
+
+	def show
+
+		@concert = Concert.find(params[:id])
+
+		render 'show'
+
 	end
 end
