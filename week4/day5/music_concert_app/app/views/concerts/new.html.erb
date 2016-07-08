@@ -1,0 +1,43 @@
+<div class="container">
+	<div class="row">
+
+		<div class="col-sm-4">
+				<ul>
+					<% @new_concert.errors.full_messages.each do |error| %>
+						<li><%= error %></li>
+					<% end %>
+				</ul>
+		</div>
+
+		<div class="col-sm-4">
+			<div class="formclass">
+
+				<%= form_for @new_concert do |f| %>
+
+					<%= f.label 'Artist:' %>
+					<%= f.text_field :artist , class: "form-control" %>
+
+					<%= f.label 'Venue:' %>
+					<%= f.text_field :venue , class: "form-control" %>
+
+					<%= f.label 'City:' %>
+					<%= f.text_field :city , class: "form-control" %>
+
+					<%= f.label 'Date:' %>
+					<%= f.date_field :date , class: "form-control" %>
+
+					<%= f.label 'Price:' %>
+					<%= f.text_field :price , class: "form-control" %>
+
+					<%= f.label 'Description:' %>
+					<%= f.text_area :description , class: "form-control" %>
+					<br>
+					<%= f.submit 'Submit', class: "btn btn-default btn-success" %>
+				<% end %>
+			</div>
+		</div>
+
+		<div class="col-sm-4">
+		</div>
+	</div>
+</div>
