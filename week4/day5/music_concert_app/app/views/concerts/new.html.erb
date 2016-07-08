@@ -1,12 +1,19 @@
 <div class="container">
 	<div class="row">
-
 		<div class="col-sm-4">
-				<ul>
-					<% @new_concert.errors.full_messages.each do |error| %>
-						<li><%= error %></li>
-					<% end %>
-				</ul>
+
+			<% if @new_concert.errors.any? %>
+			<div class="alert alert-danger" role="alert">
+					<strong>Warning! One or more inputs are not correct</strong>
+					<ul>
+						<br>
+						<% @new_concert.errors.full_messages.each do |error| %>
+							<li><%= error %></li>
+						<% end %>
+					</ul>
+			</div>
+			<% end %>
+
 		</div>
 
 		<div class="col-sm-4">
