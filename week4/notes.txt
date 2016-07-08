@@ -1,0 +1,52 @@
+## Rails workflow ##
+
+ROUTES -> CONTROLLER (class) -> ACTION (method) -> VIEW [Only if it's a GET]
+
+	
+Actions:
+
+	index 	- list of books
+		[ GET /books ]
+
+	new 	- form for creation
+		[GET /books/new]
+
+	create	- receiving the form submission
+		[POST /books]
+
+	show 	- displays the details of a book 
+		[GET /books/:id]
+
+	edit	- form for editing
+		[GET /books/57/edit]
+
+	update	- receives form submission
+		[PATCH /books/:id]
+
+	destroy - deletes a book record
+		[DELETE /books/57]
+
+
+
+when to use plural/singular
+
+	Controller 	-> Plural
+		ex: BooksController <- rails generate controller books
+
+	Model		-> Singular
+		ex: Book Model
+	Table 		-> Plural
+		ex: create_table :books
+
+
+---misc notes
+
+	when rails generates a model, basically a model Model_name is created, which inherits the ActiveBase class.
+	ActiveBase lets you query and play with the DB.
+	All methods are covered in the ActiveBase docs
+
+
+---incomplete - look at nizar github to check
+
+	resources books, only: ["new", "create"]
+	resources books , only: [
