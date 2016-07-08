@@ -9,6 +9,34 @@
   </head>
 
   <body>
+  	<header>
+  	<div class="container-fluid">
+  		<div class="row">
+  			<div class="col-sm-12">
+		  		<h1><%= link_to 'Music Concerts WebApp', '/', class: "nounderline" %></h1>
+	  		</div>
+		  </div>
+	  </div>
+  	</header>
+  	<hr>
+  	<div class="container-fluid">
     <%= yield %>
+	  </div>
+    <hr>
+    <footer>
+  	<div class="container-fluid">
+  		<div class="row">
+				<div class="col-sm-3">
+					<h6>App Powered by Ruby on Rails</h6>
+				</div>
+				<div class="col-sm-6">
+				</div>
+				<div class="col-sm-3">
+		    	<h6 class="footerright">Copyright Federico G. De Faveri &copy;
+		    	</h6>
+		    </div>
+		  </div>
+		</div>
+    </footer>
   </body>
 </html>
