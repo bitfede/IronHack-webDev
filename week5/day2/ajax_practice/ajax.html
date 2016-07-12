@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ajax Practice</title>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="container">
+	<h1>AJAX</h1>
+
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+
+			var httpReq = new XMLHttpRequest();
+
+			httpReq.onreadystatechange = callbackFx;
+			httpReq.open("GET", "https://ironhack-characters.herokuapp.com/characters");
+			httpReq.send();
+
+
+			function callbackFx(event) {
+				var httpreq = event['currentTarget'];
+
+				if (httpreq.readyState === 4) {
+
+					if (httpreq.status === 200) {
+						console.log("succesfully retrieved data from server");
+						
+					}
+					else {
+						alert('error fetching data from server');
+					}
+
+				}
+			}
+
+
+
+		} );
+
+	</script>
+</div>
+</body>
+</html>
