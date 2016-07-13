@@ -1,26 +1,39 @@
 <!DOCTYPE html>
+
 <html>
 <head>
-	<title>Ajax Spotify mini-exercise</title>
+	<title>Spotify exercise</title>
+	<meta charset="UTF-8">
 
-	<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
-<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+<script crossorigin="anonymous" integrity="sha256-bI2iPDxBx2iBPbZ/GBiJ9fOIkeZ+GvKRtUTDGKJuytI=" src="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.js"></script>
+
+<link rel="stylesheet" crossorigin="anonymous" integrity="sha256-haz1W/Eq5M2zCNvLT8+8rjKxmMvlrNJCHuiELtL8/a4=" href="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.css">
+
+
 
 <script type="text/javascript" src="app.js"></script>
-
 </head>
-	<body>
-		<div class="container">
-			<div class="row">
-				<h1>Spotify Artist Search</h1>
+
+<body class="body">
+
+	<div class="row">
+		<h1>Spotify Artist Search</h1>
+	</div>
+	<div class="row">
+		<div class="small-3 columns">
+
 			<form id="searchartist">
-				<label>Search for an Artist:</label>
-				<input type="text" class="js-artist-src">
-				<button id="js-submit" class="btn btn-primary">Search</button>
-			</form>
+			<label>Search for an Artist:</label>
+			<input type="text" class="js-artist-src">
+			<button id="js-submit" class="button">Search</button>
+		</form>
 		</div>
+		<div class="small-9 columns artists">
+			
 		</div>
-	</body>
+	</div>
+</body>
+
 </html>
