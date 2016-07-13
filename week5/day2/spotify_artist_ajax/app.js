@@ -47,7 +47,7 @@ $(document).ready( function() {
 		<div class="reveal" id="Modal${art.id}" data-reveal>
 	  <h1>${art.name}</h1>
 	  <p class="lead">This artist ID is ${art.id}</p>
-	  <p>Im a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+	  <p>Data about artist to be added soon!</p>
 	  <button class="close-button" data-close aria-label="Close modal" type="button">
     <span aria-hidden="true">&times;</span>
 	  </button>
