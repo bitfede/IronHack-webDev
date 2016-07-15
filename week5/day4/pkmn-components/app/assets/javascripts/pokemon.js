@@ -8,14 +8,18 @@ PokemonApp.Pokemon = class {
 	}
 
 	render() {
-		console.log("rendering pokemon: #" + this.id);
+		var pokeID = this.id;
+		console.log("rendering pokemon: #" + pokeID);
+
+		//-------first ajax request
 
 		$.ajax({
-			url: "/api/pokemon/" + this.id,
+			url: "/api/pokemon/" + pokeID,
 			success: function (response) {
-				console.log("Pokemon Info:");
-				console.log(response);
-				console.log("-------------");
+				var response1 = response;
+				// console.log("Pokemon Info:");
+				// console.log(response);
+				// console.log("-------------");
 
 				//clear forms
 				$('.js-pokename').text(response.name);
@@ -34,38 +38,40 @@ PokemonApp.Pokemon = class {
 				}
 				$('.js-pokeType').text(poketypes);
 
+				//-----second ajax request
 
+				var pokeURL = response.sprites[0].resource_uri
+				$.ajax({
+					url: pokeURL,
+					success: function (response) {
+					var imgurl = 'http://pokeapi.co' + response.image
+					$('.js-pokeIMG').attr('src' , imgurl);
+
+					//------third ajax request
+					console.log(response)
+					pokeURL = response1.descriptions[0].resource_uri
+
+					$.ajax({
+						url: pokeURL,
+						success: function (response) {
+						//log everything in modalbody-right
+						$('.pokeDescription').text(response.description)
+						},
+						error: function() { alert("ERROR!!!");}
+					});
+
+
+
+					$(".js-pokemon-modal").modal("show");
+					},
+					error: function() {alert('error')}
+				});
 
 			},
 			error: function() {
 				alert("error");
 			}
-		});
-
-		$.ajax({
-			url: "/api/sprite/" + this.id,
-			success: function (response) {
-
-			var imgurl = 'http://pokeapi.co' + response.image
-			$('.js-pokeIMG').attr('src' , imgurl);
-			},
-			error: function() {alert('error')}
-		});
-
-
-		$.ajax({
-			url: "/api/description/" + this.id,
-			success: function (response) {
-				//log everything in modalbody-right
-				console.log(response);
-				$('.pokeDescription').text(response.description)
-			},
-			error: function() { alert("ERROR!!!");}
-		});
-
-
-
-		$(".js-pokemon-modal").modal("show");		
+		});		
 	}
 
 }
