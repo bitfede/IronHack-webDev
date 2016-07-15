@@ -10,6 +10,10 @@ $(document).ready( function () {
 	function searchArtist(event) {
 		event.preventDefault();
 
+		if ( $('.js-btnPlay').hasClass('playing') === true ) {
+      $('.js-player').trigger('pause');
+      $('.js-btnPlay').removeClass('playing')
+		}
 		var searchInput = $('.js-searchSng').val();
 		var apiURL = `https://api.spotify.com/v1/search?q=${searchInput}&type=track`
 
@@ -28,17 +32,27 @@ $(document).ready( function () {
 					$('.js-songtitle').text(firstRes.name)
 					$('.js-artistname').text(firstRes.artists[0].name)
 					$('.js-player').attr('src', firstRes.preview_url)
+					$('.js-albumimg').attr('src',firstRes.album.images[0].url )
 				}
 			}
 		})
 	}
 
 	function playsong() {
-		$('.js-player').trigger('play');
+		if ( $('.js-btnPlay').hasClass('playing') === true ) {
+      $('.js-player').trigger('pause');
+      $('.js-btnPlay').removeClass('playing')
+		}
+		else {
+			$('.js-player').trigger('play');
+			$('.js-btnPlay').addClass('playing');
+		}
+	}
 
-		$('.js-btnPlay').on('click', function() {
-			$('.js-player').trigger('pause');
-		})
+	function printTime() {
+	  var current = $('.js-player').prop('currentTime');
+	  $('.js-progBar').attr('value', current)
+	  //console.debug('Current time: ' + current);
 	}
 
 	//---------------------------------//
@@ -47,4 +61,5 @@ $(document).ready( function () {
 
 	$('.js-searchBtn').on('click' , searchArtist);
 	$('.js-btnPlay').on('click', playsong);
+	$('.js-player').on('timeupdate', printTime);
 });
