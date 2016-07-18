@@ -1,0 +1,1 @@
+  [1m[36mSandwich Load (0.3ms)[0m  [1mSELECT  "sandwiches".* FROM "sandwiches"  ORDER BY "sandwiches"."id" ASC LIMIT 1[0m
