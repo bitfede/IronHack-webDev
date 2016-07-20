@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts "----- seeding DB... -----"
+
+fede = User.create!(name: "Fede Fede", email: "fede@example.com", password: "password", password_confirmation: "password")
+
+fede.comics.create(title: "ruby world", publisher: "pragmatic Prog")
+
+puts "----- seeding COMPLETE! -----"
