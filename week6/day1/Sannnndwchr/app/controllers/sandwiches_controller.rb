@@ -4,6 +4,10 @@ class SandwichesController < ApplicationController
 	render json: sandwiches
 	end
 
+	def home
+		render 'home'
+	end
+
 	def show
 		sandwich = Sandwich.find_by(id: params[:id])
 		unless sandwich
