@@ -1,7 +1,17 @@
+<% if user_signed_in? %>
+	<p>Hello <%= current_user.name %>. 
+		<%= link_to 'Log out' , destroy_user_session_path, method: :delete %></p>
+<% else %>
+	<p>not logged</p>
+<% end %>
+
 <div style="text-align:center">
 <h1>Welcome to Sandwichr</h1>
 
 <%= link_to 'Log In!' , new_user_session_path %>
 <br>
 <%= link_to 'Sign Up!', new_user_registration_path %>
+<br>
+<br>
+<%= link_to 'Sandwiches',  sandwiches_path %>
 </div>
